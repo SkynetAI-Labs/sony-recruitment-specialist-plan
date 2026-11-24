@@ -40,7 +40,8 @@ CSS = f"""
 .cs .note {{ background:{PALE}; border-left:5px solid {YEL}; padding:0.75rem 1rem; border-radius:6px; margin:0.5rem 0 0; color:#1F1F24 !important; }}
 .cs .code {{ background:#F6F6F6; border:1px solid #E5E5E5; border-radius:6px; padding:0.6rem 0.8rem; font-family:Menlo,Consolas,monospace; font-size:0.82rem; color:#1A1A1A !important; margin:0.3rem 0 0.7rem; white-space:pre-wrap; }}
 .cs .footer {{ background:{DARK}; color:#D9D9D9 !important; text-align:center; font-size:0.85rem; padding:0.8rem; border-radius:10px; margin-top:0.6rem; }}
-@media (max-width:800px) {{ .cs .kpis, .cs .cards, .cs .cards.four {{ grid-template-columns:repeat(2,1fr); }} .cs .bricks {{ display:none; }} .cs .btitle {{ font-size:1.6rem; }} }}
+@media (max-width:1050px) {{ .cs .bricks {{ display:none; }} }}
+@media (max-width:800px) {{ .cs .kpis, .cs .cards, .cs .cards.four {{ grid-template-columns:repeat(2,1fr); }} .cs .btitle {{ font-size:1.6rem; }} }}
 """
 
 def dot(x, y, d, col, ring=False):
@@ -133,8 +134,8 @@ S.append(("Sourcing, screening & shortlisting", p("Data-driven sourcing across e
     ["Employee referrals", "Sony Europe's own network across 28 countries"],
     ["External recruitment partners", "Used selectively for hard-to-fill or niche roles, with clear briefs and SLAs"],
     ["PeachBox. (built by me)", "Turns a brief into a ranked, evidence-based shortlist with recruiter-approved outreach"],
- ]) + '<div class="code">("Key Account Manager" OR "Key Account Manager*in" OR "National Account Manager") AND ("consumer electronics" OR "Unterhaltungselektronik" OR retail) AND (Deutschland OR Germany OR Munich OR Berlin)</div>'
-   + '<div class="code">("Product Marketing Manager" OR "Chef de produit" OR "Responsable marketing produit") AND (B2B OR "professional solutions" OR broadcast OR imaging) AND (Paris OR France)</div>'
+ ]) + '<div class="code">("Area Business Manager" OR "Key Account Manager" OR "National Account Manager") AND (headphones OR audio OR "consumer electronics") AND (Currys OR Argos OR Amazon OR retail) AND (UK OR "United Kingdom")</div>'
+   + '<div class="code">("Sales Manager" OR "Account Manager" OR "Business Development Manager" OR "Vertriebsleiter") AND (semiconductor OR "analog IC" OR LSI OR "mixed-signal") AND (UK OR Germany OR Deutschland OR Netherlands OR Nederland)</div>'
    + '<div class="note" style="border-left:5px solid #1F4FA8;"><b>Sample outreach (Area Business Manager – Headphones):</b><br>'
      'Hi Anna, your work growing the audio category with Currys and Argos stood out. Sony Europe is hiring an Area Business Manager for headphones, owning key UK retail partners for one of the best-known audio ranges in the world, with hybrid working from Weybridge. '
      'Open to a 15-minute call this week? Happy to share the full brief first.</div>'
