@@ -23,8 +23,9 @@ CSS = f"""
 .cs .nav {{ display:flex; flex-wrap:wrap; gap:0.45rem; margin:0 0 1.4rem; }}
 .cs .nav a {{ text-decoration:none; font-weight:700; font-size:0.86rem; padding:0.5rem 0.85rem; border-radius:8px; }}
 .cs .block {{ border:1px solid #E2E4E8; border-radius:12px; overflow:hidden; margin:0 0 1.6rem; background:#FFFFFF; scroll-margin-top:70px; }}
+.cs .bh, .cs .bh * {{ color:#FFFFFF !important; }}
 .cs .bh {{ padding:0.7rem 1.1rem; font-weight:800; font-size:1.05rem; }}
-.cs .bh small {{ display:block; font-weight:700; font-size:0.72rem; letter-spacing:0.12em; opacity:0.85; }}
+.cs .bh small {{ display:block; font-weight:700; font-size:0.72rem; letter-spacing:0.12em; color:#FFFFFF !important; opacity:1; }}
 .cs .bb {{ padding:1rem 1.2rem 1.1rem; }}
 .cs .cards {{ display:grid; grid-template-columns:repeat(3,1fr); gap:0.8rem; margin:0.4rem 0 0.9rem; }}
 .cs .cards.two {{ grid-template-columns:repeat(2,1fr); }}
