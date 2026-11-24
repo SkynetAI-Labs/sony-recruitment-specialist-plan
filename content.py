@@ -23,7 +23,8 @@ CSS = f"""
 .cs .nav {{ display:flex; flex-wrap:wrap; gap:0.45rem; margin:0 0 1.4rem; }}
 .cs .nav a {{ text-decoration:none; font-weight:700; font-size:0.86rem; padding:0.5rem 0.85rem; border-radius:8px; }}
 .cs .block {{ border:1px solid #E2E4E8; border-radius:12px; overflow:hidden; margin:0 0 1.6rem; background:#FFFFFF; scroll-margin-top:70px; }}
-.cs .bh, .cs .bh * {{ color:#FFFFFF !important; }}
+.cs .bh, .cs .bh *, .cs .bh small, .cs .nav a, .cs .nav a * {{ color:#FFFFFF !important; opacity:1 !important; }}
+.cs .nav a, .cs div.nav a:link, .cs div.nav a:visited {{ color:#FFFFFF !important; }}
 .cs .bh {{ padding:0.7rem 1.1rem; font-weight:800; font-size:1.05rem; }}
 .cs .bh small {{ display:block; font-weight:700; font-size:0.72rem; letter-spacing:0.12em; color:#FFFFFF !important; opacity:1; }}
 .cs .bb {{ padding:1rem 1.2rem 1.1rem; }}
@@ -93,7 +94,7 @@ BANNER = (
 
 KPIS = '<div class="kpis">' + "".join(
     f'<div class="kpi"><div class="v">{v}</div><div class="l">{l}</div></div>' for v, l in [
-        ("28", "European countries Sony Europe hires across"), ("48h", "First shortlist to the hiring manager"),
+        ("28", "European countries with Sony Europe offices"), ("48h", "First shortlist to the hiring manager"),
         ("100%", "Candidates updated at every stage"), ("90%+", "Target offer-accept rate")]
 ) + "</div>"
 
@@ -112,9 +113,9 @@ S.append(("Partnering with the Talent Acquisition Manager", p(
     ("Working across HR", ul(["HR Business Partners on org plans", "Reward on offers and benchmarking", "L&D on manager training", "People Services on contracts and onboarding"])),
  ])))
 
-S.append(("Sony Europe at a glance: who I would hire for", table(["Business area", "Typical hires in my remit", "What candidates look for"], [
+S.append(("Sony Europe at a glance: who I would hire for", table(["Business area", "Typical hires in my remit", "What attracts candidates to Sony"], [
     ["Consumer electronics (TV, audio, imaging)", "Key Account Managers, Channel Sales, Product and Trade Marketing", "Iconic products, brand pride, retail and e-commerce scope"],
-    ["Professional solutions (broadcast, cinema, display)", "B2B Sales, Solutions Sales, Product Marketing", "Technical products, long sales cycles, European scope"],
+    ["Professional solutions (broadcast, cinema, display)", "B2B Sales, Solutions Sales, Product Marketing", "Technical products, big-name customers, European scope"],
     ["Imaging &amp; sensing, semiconductor, R&amp;D, AI", "Business Development, Marketing, Programme and Operations roles", "Innovation, technology leadership, global projects"],
     ["Healthcare and biotech", "Commercial and Operations roles", "Purpose-led work and growth markets"],
     ["Business support across 28 countries", "Finance (e.g. FP&amp;A), Business Planning, Supply Chain, Customer Service, HR and Mobility", "Stability, hybrid working, career mobility across Europe"],
@@ -156,7 +157,7 @@ S.append(("Navigating European markets", table(["Market", "Language", "Typical n
     ["UK", "English", "1–3 months", "Right-to-work checks; counter-offers common"],
     ["Germany (DACH)", "German", "Often 3 months, sometimes to quarter end", "Works councils; German-language outreach and interviews"],
     ["France", "French", "1–3 months", "CDI contracts and local employment law; French-language approach"],
-    ["Netherlands", "Dutch / English", "1–2 months", "English widely used; 30% ruling questions for international hires"],
+    ["Netherlands", "Dutch / English", "1–2 months", "English widely used; expat tax rules matter for international hires"],
     ["Southern Europe", "Spanish / Italian", "15 days – 2 months", "Collective agreements shape pay and terms"],
  ]) + cards([
     ("Employment law", "Partner with HR and legal on contract type, probation and local terms before offer"),
@@ -236,7 +237,7 @@ S.append(("Why Adam for Sony Europe", table(["What the role needs", "What I brin
     ["Recruitment technology and data", "Built PeachBox., my own AI sourcing platform; Greenhouse, Ashby, Bullhorn, LinkedIn Recruiter"],
     ["Training and developing others", "Trained every new recruiter as two businesses grew, and coached hiring managers on assessment"],
     ["A growing HR team that wants people who stretch", "Curious and hands-on: I build my own tools and take on new challenges"],
- ]) + note("Agency-trained and self-sourcing, now bringing that pace and headhunting skill in-house to Sony Europe.")))
+ ]) + note("<b>Every one of my 120+ hires was someone I found myself. That's what I'd bring to Sony Europe from day one.</b>")))
 
 S.append(("First 90 days", table(["Days", "Focus", "Output"], [
     ["1–30", "Learn the business, HR team, ATS and live vacancies; intake with every hiring manager", "Clear plan for each vacancy"],
@@ -253,13 +254,13 @@ def nav():
     out = []
     for i, (t, _) in enumerate(S):
         col = TABCOL[i % 4]
-        out.append(f'<a href="#s{i+1}" style="background:{col};color:#FFFFFF !important;">{i+1:02d} {t}</a>')
+        out.append(f'<a href="#s{i+1}" style="background:{col};color:#FFFFFF;">{i+1:02d} {t}</a>')
     return '<div class="nav">' + "".join(out) + "</div>"
 
 def block(i):
     t, body = S[i]
     col = TABCOL[i % 4]
-    return (f'<div class="block" id="s{i+1}"><div class="bh" style="background:{col};color:#FFFFFF !important;">'
+    return (f'<div class="block" id="s{i+1}"><div class="bh" style="background:{col};color:#FFFFFF;">'
             f'<small>SECTION {i+1:02d}</small>{t}</div><div class="bb">{body}</div></div>')
 
 FOOTER = '<div class="footer">Prepared by Adam Baig · London, UK · A hypothetical plan built on public information.</div>'
